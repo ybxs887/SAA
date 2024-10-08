@@ -1,0 +1,228 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'D:/Xilinx2021.2/Vitis_HLS/2021.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user '17896' on host 'laptop-g0vbvuor' (Windows NT_amd64 version 6.2) on Tue Mar 05 16:06:35 +0800 2024
+INFO: [HLS 200-10] In directory 'E:/bi_ye_she_ji/linux/SAA/src/MMU'
+Sourcing Tcl script 'E:/bi_ye_she_ji/linux/SAA/src/MMU/MMU/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: open_project MMU 
+INFO: [HLS 200-10] Opening project 'E:/bi_ye_she_ji/linux/SAA/src/MMU/MMU'.
+INFO: [HLS 200-1510] Running: set_top gemm_kernel 
+INFO: [HLS 200-1510] Running: add_files GEMM.cpp 
+INFO: [HLS 200-10] Adding design file 'GEMM.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files GEMM.hpp 
+INFO: [HLS 200-10] Adding design file 'GEMM.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files ../SAA.h 
+INFO: [HLS 200-10] Adding design file '../SAA.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tb_gemm.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tb_gemm.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'E:/bi_ye_she_ji/linux/SAA/src/MMU/MMU/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xck26-sfvc784-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] Analyzing design file 'GEMM.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 6.249 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int(int)' into 'Process_Element<ap_int<8>, ap_int<32> >::reset()' (GEMM.cpp:13:11)
+INFO: [HLS 214-131] Inlining function 'ap_int<32>::ap_int(int)' into 'Process_Element<ap_int<8>, ap_int<32> >::reset()' (GEMM.cpp:15:10)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int(int)' into 'Process_Element<ap_int<8>, ap_int<32> >::reset()' (GEMM.cpp:14:12)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int(int)' into 'Systolic_data_setup(ap_int<8> (*) [32], ap_int<8>*, bool, int)' (GEMM.cpp:97:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' into 'ap_int_base<8, true>::RType<8, true>::mult operator*<8, true, 8, true>(ap_int_base<8, true> const&, ap_int_base<8, true> const&)' (D:/Xilinx2021.2/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:1539:339)
+INFO: [HLS 214-131] Inlining function 'ap_int<16>::ap_int<16, true>(ap_int_base<16, true> const&)' into 'ap_int_base<8, true>::RType<8, true>::mult operator*<8, true, 8, true>(ap_int_base<8, true> const&, ap_int_base<8, true> const&)' (D:/Xilinx2021.2/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:1539:551)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' into 'ap_int_base<8, true>::RType<8, true>::mult operator*<8, true, 8, true>(ap_int_base<8, true> const&, ap_int_base<8, true> const&)' (D:/Xilinx2021.2/Vitis_HLS/2021.2/common/technology/autopilot\ap_int_base.h:1539:427)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::RType<8, true>::mult operator*<8, true, 8, true>(ap_int_base<8, true> const&, ap_int_base<8, true> const&)' into 'Process_Element<ap_int<8>, ap_int<32> >::process(ap_int<8>, ap_int<8>)' (GEMM.cpp:29:18)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>& ap_int_base<32, true>::operator+=<16, true>(ap_int_base<16, true> const&)' into 'Process_Element<ap_int<8>, ap_int<32> >::process(ap_int<8>, ap_int<8>)' (GEMM.cpp:29:8)
+INFO: [HLS 214-186] Unrolling loop 'systolic_array_outer_loop' (GEMM.cpp:52:3) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse' completely with a factor of 63 (GEMM.cpp:50:0)
+INFO: [HLS 214-178] Inlining function 'Process_Element<ap_int<8>, ap_int<32> >::reset()' into 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::reset(int, int)' (GEMM.cpp:42:0)
+INFO: [HLS 214-178] Inlining function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::reset(int, int)' into 'gemm_kernel(ap_int<8> (*) [32], ap_int<8> (*) [32], ap_int<32> (*) [32])' (GEMM.cpp:140:0)
+INFO: [HLS 214-178] Inlining function 'read_result(ap_int<32> (*) [32])' into 'gemm_kernel(ap_int<8> (*) [32], ap_int<8> (*) [32], ap_int<32> (*) [32])' (GEMM.cpp:140:0)
+INFO: [HLS 214-241] Aggregating bram variable 'out' with compact=bit mode in 32-bits (GEMM.cpp:140:0)
+INFO: [HLS 214-241] Aggregating bram variable 'weight' with compact=bit mode in 8-bits (GEMM.cpp:140:0)
+INFO: [HLS 214-241] Aggregating bram variable 'input' with compact=bit mode in 8-bits (GEMM.cpp:140:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.303 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.196 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.252 seconds; current allocated memory: 1.253 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_44_2' (GEMM.cpp:44) in function 'gemm_kernel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_132_2' (GEMM.cpp:132) in function 'gemm_kernel' automatically.
+WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_103_2' (GEMM.cpp:103) in function 'Systolic_data_setup': cannot completely unroll a loop with a variable trip count.
+Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-936.html
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (GEMM.cpp:57:13) in function 'Systolic_Array<ap_int<8>, ap_int<32>, 32>::pulse'... converting 6 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.092 seconds; current allocated memory: 1.253 GB.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_43_1' (GEMM.cpp:43:29) in function 'gemm_kernel'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_130_1' (GEMM.cpp:130:28) in function 'gemm_kernel'.
+WARNING: [HLS 200-960] Cannot flatten loop 'gemm_outer_loop' (GEMM.cpp:150:11) in function 'gemm_kernel' the outer loop is not a perfect loop.
+Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-960.html
+INFO: [HLS 200-472] Inferring partial write operation for 'systolic_array.pe.psum.V' (GEMM.cpp:68:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'out_vec.0.0.0' (GEMM.cpp:97:19)
+INFO: [HLS 200-472] Inferring partial write operation for 'out_vec.0.0.0' (GEMM.cpp:120:40)
+INFO: [HLS 200-472] Inferring partial write operation for 'out_vec.0.0.0' (GEMM.cpp:122:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'systolic_array.pe.input.V' (GEMM.cpp:13:9)
+INFO: [HLS 200-472] Inferring partial write operation for 'systolic_array.pe.weight.V' (GEMM.cpp:14:10)
+INFO: [HLS 200-472] Inferring partial write operation for 'systolic_array.pe.psum.V' (GEMM.cpp:15:8)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.357 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'gemm_kernel' ...
+WARNING: [SYN 201-103] Legalizing function name 'process' to 'process_r'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_kernel_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_44_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_43_1_VITIS_LOOP_44_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_43_1_VITIS_LOOP_44_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.262 seconds; current allocated memory: 1.253 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Systolic_data_setup' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.102 seconds; current allocated memory: 1.253 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.082 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'process_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=ret) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 1.253 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.049 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pulse' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 14.482 seconds; current allocated memory: 1.253 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.723 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_kernel_Pipeline_VITIS_LOOP_130_1_VITIS_LOOP_132_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_130_1_VITIS_LOOP_132_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_130_1_VITIS_LOOP_132_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.647 seconds; current allocated memory: 1.253 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 1.253 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.574 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_kernel_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_44_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_kernel_Pipeline_VITIS_LOOP_43_1_VITIS_LOOP_44_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.667 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Systolic_data_setup' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Systolic_data_setup'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.232 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'process_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_32s_32_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'process_r'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.383 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pulse' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pulse'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.819 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_kernel_Pipeline_VITIS_LOOP_130_1_VITIS_LOOP_132_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_kernel_Pipeline_VITIS_LOOP_130_1_VITIS_LOOP_132_2' pipeline 'VITIS_LOOP_130_1_VITIS_LOOP_132_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_kernel_Pipeline_VITIS_LOOP_130_1_VITIS_LOOP_132_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 3 seconds. Elapsed time: 12.533 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm_kernel/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm_kernel/weight' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm_kernel/out_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gemm_kernel' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_kernel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.265 seconds; current allocated memory: 1.253 GB.
+INFO: [RTMG 210-278] Implementing memory 'gemm_kernel_systolic_array_pe_input_V_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'gemm_kernel_systolic_array_pe_psum_V_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'gemm_kernel_a_vec_V_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.452 seconds; current allocated memory: 1.253 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.589 seconds; current allocated memory: 1.253 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for gemm_kernel.
+INFO: [VLOG 209-307] Generating Verilog RTL for gemm_kernel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 232.68 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 15 seconds. CPU system time: 3 seconds. Elapsed time: 58.807 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 17 seconds. Total CPU system time: 4 seconds. Total elapsed time: 62.42 seconds; peak allocated memory: 1.253 GB.

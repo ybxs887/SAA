@@ -1,0 +1,53 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'D:/Xilinx2021.2/Vitis_HLS/2021.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user '17896' on host 'laptop-g0vbvuor' (Windows NT_amd64 version 6.2) on Wed Apr 03 22:05:25 +0800 2024
+INFO: [HLS 200-10] In directory 'E:/bi_ye_she_ji/linux/SAA_linux/SAA2/SAA/src_test/MMU/MMU_WS'
+Sourcing Tcl script 'E:/bi_ye_she_ji/linux/SAA_linux/SAA2/SAA/src_test/MMU/MMU_WS/MMU_WS/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: open_project MMU_WS 
+INFO: [HLS 200-10] Opening project 'E:/bi_ye_she_ji/linux/SAA_linux/SAA2/SAA/src_test/MMU/MMU_WS/MMU_WS'.
+INFO: [HLS 200-1510] Running: set_top BMM 
+INFO: [HLS 200-1510] Running: add_files ../../SAA.h 
+INFO: [HLS 200-10] Adding design file '../../SAA.h' to the project
+INFO: [HLS 200-1510] Running: add_files LOAD.hpp 
+INFO: [HLS 200-10] Adding design file 'LOAD.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files LOAD.cpp 
+INFO: [HLS 200-10] Adding design file 'LOAD.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files GEMM_WS.hpp 
+INFO: [HLS 200-10] Adding design file 'GEMM_WS.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files GEMM_WS.cpp 
+INFO: [HLS 200-10] Adding design file 'GEMM_WS.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb weights.txt -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'weights.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tb_gemm_ws.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'tb_gemm_ws.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb results.txt -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'results.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb inputs.txt -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'inputs.txt' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'E:/bi_ye_she_ji/linux/SAA_linux/SAA2/SAA/src_test/MMU/MMU_WS/MMU_WS/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xck26-sfvc784-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name BMM BMM 
+INFO: [HLS 200-1510] Running: csim_design -clean -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.327 seconds; current allocated memory: 0.000 MB.
+4
+    while executing
+"source E:/bi_ye_she_ji/linux/SAA_linux/SAA2/SAA/src_test/MMU/MMU_WS/MMU_WS/solution1/csim.tcl"
+    invoked from within
+"hls::main E:/bi_ye_she_ji/linux/SAA_linux/SAA2/SAA/src_test/MMU/MMU_WS/MMU_WS/solution1/csim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 5.484 seconds; peak allocated memory: 1.239 GB.

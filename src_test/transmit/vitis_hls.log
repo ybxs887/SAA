@@ -1,0 +1,119 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'fpga_pc' on host 'vm' (Linux_x86_64 version 6.5.0-25-generic) on Mon Mar 25 16:06:50 CST 2024
+INFO: [HLS 200-10] On os Ubuntu 22.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/fpga_pc/my_accelerator_generate/SAA/src/transmit'
+Sourcing Tcl script '/home/fpga_pc/my_accelerator_generate/SAA/src/transmit/LOAD/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: open_project LOAD 
+INFO: [HLS 200-10] Opening project '/home/fpga_pc/my_accelerator_generate/SAA/src/transmit/LOAD'.
+INFO: [HLS 200-1510] Running: add_files ../SAA.h 
+INFO: [HLS 200-10] Adding design file '../SAA.h' to the project
+INFO: [HLS 200-1510] Running: add_files LOAD.hpp 
+INFO: [HLS 200-10] Adding design file 'LOAD.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files LOAD.cpp 
+INFO: [HLS 200-10] Adding design file 'LOAD.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb LOAD_test.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'LOAD_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/fpga_pc/my_accelerator_generate/SAA/src/transmit/LOAD/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xck26-sfvc784-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../LOAD_test.cpp in debug mode
+   Compiling ../../../../LOAD.cpp in debug mode
+   Generating csim.exe
+inputs_matrix:
+3 -14 -3 15 13 -5 6 -8 
+-11 1 -18 7 -10 -1 -17 -14 
+0 6 -8 -4 -9 -12 -13 9 
+2 -10 2 -17 7 -5 -11 -18 
+2 -2 9 -13 13 -4 -9 -18 
+9 -7 1 19 4 -3 18 -16 
+15 -10 -7 -14 -9 0 16 13 
+2 -10 16 -19 5 -15 -16 -13 
+
+weights_matrix:
+-4 5 -14 -11 13 -3 -16 -5 
+2 5 -6 -13 14 -16 -17 10 
+-13 -12 16 -2 8 4 -17 -9 
+14 19 -8 0 16 -12 -1 -8 
+6 6 -6 -1 15 -10 14 -2 
+7 -19 -3 2 17 -8 -8 16 
+1 -20 -14 -19 5 -11 -16 -1 
+-20 -11 11 17 -3 -9 -19 15 
+
+ouputs_matrix:
+418 407 -361 -118 223 -61 504 -480 
+574 752 -49 237 -371 282 864 -18 
+-271 385 239 323 -475 168 45 138 
+64 168 129 -10 -351 619 777 -345 
+90 177 94 -170 -2 381 562 -358 
+544 256 -663 -634 478 -209 35 -590 
+-483 -674 -177 -95 -319 52 -566 197 
+-333 185 536 124 -511 809 578 -531 
+
+3,-14,-3,15,13,-5,6,-8,-11,1,-18,7,-10,-1,-17,-14,0,6,-8,-4,-9,-12,-13,9,2,-10,2,-17,7,-5,-11,-18,2,-2,9,-13,13,-4,-9,-18,9,-7,1,19,4,-3,18,-16,15,-10,-7,-14,-9,0,16,13,2,-10,16,-19,5,-15,-16,-13,
+
+3,-14,-3,15,13,-5,6,-8,-11,1,-18,7,-10,-1,-17,-14,0,6,-8,-4,-9,-12,-13,9,2,-10,2,-17,7,-5,-11,-18,2,-2,9,-13,13,-4,-9,-18,9,-7,1,19,4,-3,18,-16,15,-10,-7,-14,-9,0,16,13,2,-10,16,-19,5,-15,-16,-13,
+
+0000000000000000000000000000010000000000000001000000000000000100
+0000000000000000000000000000000000000000000000000000000000001000
+
+input_buffer:
+3,-14,-3,15,
+13,-5,6,-8,
+-11,1,-18,7,
+-10,-1,-17,-14,
+3,-14,-3,15,
+13,-5,6,-8,
+-11,1,-18,7,
+-10,-1,-17,-14,
+0,0,0,0,
+0,0,0,0,
+
+weight_buffer:
+-4,5,-14,-11,
+13,-3,-16,-5,
+2,5,-6,-13,
+14,-16,-17,10,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+
+output_buffer:
+10,-198,-55,226,
+-217,238,-2,-276,
+119,-260,127,420,
+-203,92,496,196,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+
+10,-198,-55,226,0,0,0,0,-217,238,-2,-276,0,0,0,0,119,-260,127,420,0,0,0,0,-203,92,496,196,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+
+outputs_matrix_hw:
+10 -198 -55 226 0 0 0 0 
+-217 238 -2 -276 0 0 0 0 
+119 -260 127 420 0 0 0 0 
+-203 92 496 196 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 2.83 seconds. CPU system time: 0.97 seconds. Elapsed time: 3.52 seconds; current allocated memory: -937.109 MB.
+INFO: [HLS 200-112] Total CPU user time: 6.49 seconds. Total CPU system time: 2.16 seconds. Total elapsed time: 6.72 seconds; peak allocated memory: 217.594 MB.
